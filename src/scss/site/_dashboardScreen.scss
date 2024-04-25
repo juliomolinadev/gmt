@@ -1,0 +1,28 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.dashboardScreen {
+	@include m.fadeIn(1000ms);
+
+	display: flex;
+	margin: 0 auto;
+	background-color: v.$background;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+
+	@include m.desktop {
+		&__main {
+			display: flex;
+			flex-direction: column;
+
+			&--expanded {
+				max-width: calc(100vw - 20rem);
+			}
+
+			&--collapsed {
+				max-width: calc(100vw - 5.5rem);
+			}
+		}
+	}
+}

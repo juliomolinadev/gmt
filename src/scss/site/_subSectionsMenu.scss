@@ -1,0 +1,32 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.subSectionsMenu {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+
+	@include m.desktop {
+		display: flex;
+	}
+
+	&__subSection {
+		border-left: 0.3rem solid v.$black;
+		transform: skewX(-20deg);
+		padding-left: 0.5rem;
+		height: fit-content;
+		width: max-content;
+		transition: color 300ms ease;
+
+		&:hover {
+			cursor: pointer;
+			color: lighten($color: v.$black, $amount: 10);
+		}
+
+		&--active {
+			color: v.$black;
+			border-left: 0.3rem solid v.$black;
+			font-weight: 900;
+		}
+	}
+}

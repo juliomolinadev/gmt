@@ -1,0 +1,40 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.userCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+
+	&__userImage {
+		border-radius: 50%;
+		overflow: hidden;
+		max-width: 6rem;
+
+		&--large {
+			max-width: 12rem;
+			margin-top: 5rem;
+		}
+	}
+
+	&__name {
+		text-align: center;
+		color: v.$gray;
+		font-size: 1.2rem;
+		font-weight: 700;
+		padding: 1rem;
+
+		&--large {
+			margin-top: 2rem;
+			font-size: 2rem;
+		}
+
+		&--collapsed {
+			padding: 0;
+			border: none;
+			width: 0;
+			overflow: hidden;
+		}
+	}
+}

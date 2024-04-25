@@ -1,0 +1,91 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.homeSection {
+	margin-bottom: 5rem;
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		@include m.desktop {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	&__section {
+		@include m.shadow();
+
+		background-color: v.$white;
+		border-radius: 0.5rem;
+		padding: 4rem;
+	}
+
+	&__operacion {
+		max-height: 1fr;
+
+		@include m.desktop {
+			grid-column: 1 / 4;
+			grid-row: 1 / 2;
+		}
+	}
+
+	&__ofertas {
+		max-height: 100rem;
+		max-width: 100rem;
+
+		@media print {
+			margin: 0 auto;
+			width: 40rem;
+		}
+
+		@include m.desktop {
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+		}
+	}
+
+	&__compras {
+		max-height: 100rem;
+		max-width: 100rem;
+
+		@include m.desktop {
+			grid-column: 1 / 2;
+			grid-row: 3 / 4;
+		}
+	}
+
+	&__transferencias {
+		@include m.desktop {
+			grid-column: 2 / 4;
+			grid-row: 2 / 4;
+		}
+	}
+}
+
+.operacionChart {
+	max-height: 30rem;
+}
+
+.ofertasChart,
+.comprasChart {
+	// max-height: 80rem;
+	// max-width: 80rem;
+	margin: 0;
+	padding: 0;
+	@media print {
+		height: 50%;
+		width: 50%;
+	}
+}
+
+.transferenciasChart {
+	margin-top: 5rem;
+}

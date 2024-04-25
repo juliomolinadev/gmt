@@ -1,0 +1,22 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.alert {
+	&__container {
+		font-size: 1.4rem;
+	}
+
+	&__aceptButton {
+		@include m.button(v.$black);
+		font-size: 1.4rem;
+		margin: 2rem 0;
+	}
+
+	&__cancelButton {
+		@include m.button(v.$white);
+		color: v.$gray;
+		border: 1px solid v.$gray;
+		font-size: 1.4rem;
+		margin: 2rem 0 2rem 2rem;
+	}
+}

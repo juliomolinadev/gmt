@@ -1,0 +1,30 @@
+@use "../../../base/variables" as v;
+@use "../../../base/mixins" as m;
+
+.profileTemplate {
+	@include m.fadeIn(1000ms);
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	@include m.desktop {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+	&__imageSection {
+		@include m.shadow();
+
+		border-radius: 0.5rem;
+		background-color: v.$white;
+	}
+
+	&__namePassSection {
+		@include m.shadow();
+
+		padding: 2rem;
+		border-radius: 0.5rem;
+		background-color: v.$white;
+	}
+}

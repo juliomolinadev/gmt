@@ -1,0 +1,52 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.dashboardHeader {
+	background-color: v.$white;
+	@include m.shadow();
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: v.$black;
+	max-width: 100%;
+	// width: calc(100vw - 20rem);
+	margin-bottom: 1.5rem;
+
+	&__logo {
+		color: v.$white;
+		margin: 1rem 2rem;
+		font-weight: 400;
+		font-style: italic;
+
+		& span {
+			font-weight: 900;
+			font-size: 1.6rem;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+		gap: 2rem;
+		margin: 1rem 2rem;
+	}
+
+	&__userImage {
+		border-radius: 50%;
+		overflow: hidden;
+		flex-basis: 5rem;
+		max-width: 2.5rem;
+		cursor: pointer;
+	}
+
+	&__icon {
+		color: v.$white;
+		cursor: pointer;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: darken(v.$white, 10);
+		}
+	}
+}

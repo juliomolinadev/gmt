@@ -1,0 +1,65 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.selector {
+	@include m.fadeIn(1000ms);
+	color: v.$black;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin: 2rem 0;
+
+	@include m.desktop {
+		flex-direction: row;
+		gap: 10rem;
+	}
+
+	&__section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: flex-start;
+
+		@include m.desktop {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&__sectionTitle {
+		text-align: right;
+	}
+
+	&__options {
+		@include m.grid(4, 0.5rem);
+
+		@include m.desktop {
+			display: flex;
+			max-width: 70vw;
+			overflow-x: auto;
+		}
+	}
+
+	&__option {
+		margin-bottom: 1rem;
+		color: v.$black;
+		text-align: center;
+		padding: 0.5rem 2rem;
+		border-radius: 0.5rem;
+		background-color: lighten($color: v.$black, $amount: 42);
+
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($color: v.$black, $amount: 38);
+		}
+
+		&--selected {
+			color: v.$white;
+			background-color: v.$black;
+
+			&:hover {
+				background-color: darken($color: v.$black, $amount: 5);
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@use "../../../base/variables" as v;
+@use "../../../base/mixins" as m;
+
+.tableAndDetailTemplate {
+	@include m.fadeIn(1000ms);
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	gap: 2rem;
+
+	@include m.desktop {
+		grid-template-columns: 2fr 1fr;
+	}
+}

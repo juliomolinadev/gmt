@@ -1,0 +1,72 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.authForm {
+	width: 90%;
+	margin: 6rem auto;
+	padding: 1rem;
+	border-radius: 0.4rem;
+	border: none;
+	background-color: v.$white;
+	position: relative;
+
+	@include m.tablet {
+		max-width: 32rem;
+	}
+
+	&__overlay {
+		z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(100, 100, 100, 0.5);
+	}
+
+	&__heading {
+		margin: 1rem 0;
+		font-size: 2.4rem;
+		// font-family: v.$headersFont;
+		// color: v.$crimson;
+	}
+
+	&__closeButton {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		color: v.$gray;
+		background-color: v.$white;
+		font-size: 2rem;
+		font-weight: 100;
+		display: flex;
+		margin: 1rem 2rem;
+		cursor: pointer;
+		transition: 0.3s ease-in-out;
+		border-style: none;
+
+		&:hover {
+			font-weight: 400;
+		}
+	}
+
+	&__footer {
+		color: v.$gray;
+		font-size: 1.4rem;
+	}
+
+	&__link {
+		margin-left: 0.5rem;
+		text-decoration: none;
+		color: v.$black;
+		font-weight: 700;
+		transition: 0.3s ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			cursor: pointer;
+			box-shadow: v.$black 0px 4px 4px -4px;
+		}
+	}
+}
