@@ -10,7 +10,7 @@ export const DashboardHeader = () => {
 	return (
 		<div className="dashboardHeader">
 			<div className="dashboardHeader__logo">
-				BancoDe<span>AGUA</span>
+				gm<span>Transport</span>
 			</div>
 
 			<div className="dashboardHeader__info">
