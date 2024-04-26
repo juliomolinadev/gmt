@@ -1,0 +1,28 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.collectionTable {
+	background-color: v.$white;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	@include m.shadow();
+	overflow-x: scroll;
+	position: relative;
+
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+
+	&__addButton {
+		color: v.$black;
+		font-size: 4rem;
+		position: absolute;
+		top: 2rem;
+		left: 84%;
+		transition: color 300ms ease;
+
+		&:hover {
+			cursor: pointer;
+			color: darken(v.$black, 10);
+		}
+	}
+}
