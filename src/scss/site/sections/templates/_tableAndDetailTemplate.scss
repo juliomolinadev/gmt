@@ -10,6 +10,8 @@
 	gap: 2rem;
 
 	@include m.desktop {
+		max-width: 80vw;
+		margin: 1rem;
 		grid-template-columns: 2fr 1fr;
 	}
 }

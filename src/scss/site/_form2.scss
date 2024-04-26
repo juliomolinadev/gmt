@@ -1,0 +1,139 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.form2 {
+	padding: 2rem;
+
+	&__section {
+		background-color: lighten($color: v.$white, $amount: 70);
+		border-radius: 0.5rem;
+		padding: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	&__inputGroup {
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__label {
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+		color: v.$black;
+	}
+
+	&__input {
+		padding: 1rem;
+		border: 0.1rem solid lighten(v.$gray, 70);
+		border-radius: 0.5rem;
+		width: 100%;
+
+		&::placeholder {
+			color: lighten(v.$gray, 60);
+		}
+
+		&--select {
+			background-color: v.$white;
+		}
+	}
+
+	&__button {
+		@include m.button(v.$black);
+	}
+
+	&__error {
+		@include m.fadeIn(1000ms);
+
+		color: v.$danger;
+		border: 0.1rem solid lighten(v.$danger, 30);
+		padding: 1rem;
+		text-align: center;
+		border-radius: 0.5rem;
+	}
+
+	&__spinner {
+		margin-left: 2rem;
+		@include m.spinner(0.2rem, 1.8rem, v.$white);
+	}
+
+	&__cameraInput,
+	&__filesInput {
+		@include m.button(v.$gray);
+		margin-top: 2rem;
+	}
+
+	&__buttonIcon {
+		font-size: 2rem;
+		margin: 0 0.5rem;
+	}
+}
+
+.cameraInput,
+.filesInput {
+	display: none;
+}
+
+.userNameForm {
+	&__inputGroup {
+		margin-top: 2rem;
+
+		@include m.desktop {
+			align-items: center;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			gap: 2rem;
+		}
+	}
+
+	&__button {
+		@include m.button(v.$black);
+		margin-top: 2rem;
+
+		@include m.desktop {
+			margin-top: 0;
+		}
+	}
+
+	&__error {
+		@include m.fadeIn(1000ms);
+
+		color: v.$danger;
+		border: 0.1rem solid lighten(v.$danger, 30);
+		padding: 1rem;
+		text-align: center;
+		border-radius: 0.5rem;
+		margin-top: 2rem;
+	}
+}
+
+.passwordForm {
+	margin-top: 5rem;
+
+	@include m.desktop {
+		align-items: center;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 2rem;
+	}
+
+	&__button {
+		@include m.button(v.$black);
+		margin-top: 2rem;
+
+		@include m.desktop {
+			margin-top: 0;
+		}
+	}
+
+	&__error {
+		@include m.fadeIn(1000ms);
+
+		color: v.$danger;
+		border: 0.1rem solid lighten(v.$danger, 30);
+		padding: 1rem;
+		text-align: center;
+		border-radius: 0.5rem;
+		margin: 2rem 0;
+	}
+}

@@ -31,7 +31,7 @@ export const PresupuestosTable = () => {
 	const customStyles = {
 		headCells: {
 			style: {
-				color: "#3182ce",
+				color: "#020202",
 				fontWeight: 900,
 			},
 		},
@@ -53,7 +53,7 @@ export const PresupuestosTable = () => {
 		{
 			when: (row: Presupuesto) => row.id === activePresupuesto?.id,
 			style: {
-				color: "#3182ce",
+				color: "#151515",
 				"&:hover": {
 					cursor: "pointer",
 				},
