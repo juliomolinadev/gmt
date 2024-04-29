@@ -5,6 +5,12 @@ import { batchesSlice } from "./batches";
 import { itemsSlice } from "./items";
 import { userSlice } from "./user";
 import { presupuestosSlice } from "./presupuestos/presupuestosSlice";
+import { casetasSlice } from "./casetas";
+import { clientesSlice } from "./clientes";
+import { combustiblesSlice } from "./combustibles";
+import { insumosSlice } from "./insumos";
+import { rutasSlice } from "./rutas";
+import { transportesSlice } from "./transportes";
 
 export const store = configureStore({
 	reducer: {
@@ -14,6 +20,12 @@ export const store = configureStore({
 		items: itemsSlice.reducer,
 		user: userSlice.reducer,
 		presupuestos: presupuestosSlice.reducer,
+		casetas: casetasSlice.reducer,
+		clientes: clientesSlice.reducer,
+		combustibles: combustiblesSlice.reducer,
+		insumos: insumosSlice.reducer,
+		rutas: rutasSlice.reducer,
+		transportes: transportesSlice.reducer,
 	},
 });
 

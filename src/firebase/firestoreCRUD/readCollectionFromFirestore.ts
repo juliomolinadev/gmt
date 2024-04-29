@@ -16,7 +16,7 @@ export const readCollectionFromFirestore = async ({ collectionPath, filters }: P
 			filters && filters.where
 				? query(
 						collection(FirebaseDB, collectionPath),
-						where(filters.where[0], filters.where[1] as WhereFilterOp, filters.where[2]),
+						where(filters.where[0], filters.where[1] as WhereFilterOp, filters.where[2])
 				  )
 				: collection(FirebaseDB, collectionPath);
 

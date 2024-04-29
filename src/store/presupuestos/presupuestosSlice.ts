@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { Presupuesto } from "../../site/interfaces/interfaces";
 
-interface BatchesState {
+interface PresupuestosState {
 	presupuestos: Presupuesto[];
 	activePresupuesto: Presupuesto | null;
 }
 
-const initialState: BatchesState = {
+const initialState: PresupuestosState = {
 	activePresupuesto: null,
 	presupuestos: [],
 };
@@ -27,15 +27,24 @@ export const presupuestosSlice = createSlice({
 		addNewPresupuesto: (state) => {
 			state.activePresupuesto = {
 				id: "",
+				id_cliente: "",
+				fecha: "",
 				tipoViaje: "",
-				rutaIda: "",
-				rutaRegreso: null,
+				id_rutaIda: "",
+				id_rutaRegreso: null,
 				fechaSalida: "",
 				fechaRegreso: null,
+				pasajeros: 0,
+				id_transporte: "",
+				viaticos: 0,
 			};
+		},
+
+		setPresupuestos: (state, action: PayloadAction<Presupuesto[]>) => {
+			state.presupuestos = action.payload;
 		},
 	},
 });
 
-export const { addPresupuesto, setActivePresupuesto, addNewPresupuesto } =
+export const { addPresupuesto, setActivePresupuesto, addNewPresupuesto, setPresupuestos } =
 	presupuestosSlice.actions;
