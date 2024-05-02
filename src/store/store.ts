@@ -1,9 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./auth";
 import { uiSlice } from "./ui";
-import { batchesSlice } from "./batches";
-import { itemsSlice } from "./items";
-import { userSlice } from "./user";
 import { presupuestosSlice } from "./presupuestos/presupuestosSlice";
 import { casetasSlice } from "./casetas";
 import { clientesSlice } from "./clientes";
@@ -16,9 +13,6 @@ export const store = configureStore({
 	reducer: {
 		auth: authSlice.reducer,
 		ui: uiSlice.reducer,
-		batches: batchesSlice.reducer,
-		items: itemsSlice.reducer,
-		user: userSlice.reducer,
 		presupuestos: presupuestosSlice.reducer,
 		casetas: casetasSlice.reducer,
 		clientes: clientesSlice.reducer,

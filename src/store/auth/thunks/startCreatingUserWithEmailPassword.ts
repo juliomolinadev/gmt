@@ -6,7 +6,7 @@ import { AppDispatch } from "../../store";
 import { setUiErrorMessage } from "../../ui";
 import { checkingCredentials, login, logout } from "../authSlice";
 import { createDocOnFirestore } from "../../../firebase/firestoreCRUD";
-import { setUser } from "../../user";
+// import { setUser } from "../../user";
 
 interface UserInRegister {
 	email: string;
@@ -81,9 +81,7 @@ export const startCreatingUserWithEmailPassword = ({
 		if (isUserCreated) {
 			messageAlert(alert);
 
-			dispatch(setUser(userInitialState));
 			dispatch(login(result));
-			// dispatch(switchRegisterModal());
 		}
 	};
 };

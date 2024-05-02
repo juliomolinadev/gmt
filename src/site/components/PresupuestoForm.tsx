@@ -49,7 +49,6 @@ export const PresupuestoForm = () => {
 		e.preventDefault();
 
 		if (isFormValid()) {
-			console.log("Guardando presupuesto", { formValues });
 			dispatch(startsavePresupuesto(formValues));
 		}
 	};
@@ -58,10 +57,8 @@ export const PresupuestoForm = () => {
 		e.preventDefault();
 
 		if (isFormValid()) {
-			console.log("Calculando presupuesto");
-
 			// casetas
-			const casetasTotales = [];
+			const casetasTotales: string[] = [];
 			let costoPeajes = 0;
 
 			const rutaIda = rutas.find((ruta) => ruta.id === formValues.id_rutaIda);
@@ -80,9 +77,9 @@ export const PresupuestoForm = () => {
 				const registroCaseta = casetas.find((c) => c.id === caseta);
 
 				const costo =
-					transporte?.ejes === 2 ? registroCaseta.tarifa_2ejes : registroCaseta.tarifa_3ejes;
+					transporte?.ejes === 2 ? registroCaseta?.tarifa_2ejes : registroCaseta?.tarifa_3ejes;
 
-				costoPeajes += costo;
+				costoPeajes += costo ? costo : 0;
 			});
 
 			// viaticos
@@ -92,7 +89,7 @@ export const PresupuestoForm = () => {
 			const costoViaticos = viaticos * salarios;
 
 			//Combustible
-			const kilometrajeTotal = rutaIda?.kilometros + rutaRegreso?.kilometros;
+			const kilometrajeTotal = (rutaIda?.kilometros ?? 0) + (rutaRegreso?.kilometros ?? 0);
 			const costoLitro = transporte?.combustible === "01" ? 22.9 : 24.03;
 			const costoCombustible = (kilometrajeTotal / 3) * costoLitro;
 
