@@ -1,2 +1,2 @@
 export * from "./rutasSlice";
-export * from "./thunks/startSetInsumos";
+export * from "./thunks/startSetRutas";

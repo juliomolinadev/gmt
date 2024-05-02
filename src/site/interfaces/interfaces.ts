@@ -12,6 +12,29 @@ export interface Presupuesto {
 	viaticos: number;
 }
 
+interface Check {
+	ciudad: string;
+	fecha: string;
+}
+
+export interface VistaPresupuesto {
+	id: string;
+	cliente: string;
+	fecha: string;
+	tipoViaje: string;
+	rutaIda: string;
+	rutaRegreso: string | null;
+	fechaSalida: string;
+	fechaRegreso: string | null;
+	intinerario: Check[];
+	pasajeros: number;
+	transporte: string;
+	costoViaticos: number;
+	costoCombustible: number;
+	costoPeajes: number;
+	costoTotal: number;
+}
+
 export interface Caseta {
 	id: string;
 	caseta: string;
@@ -37,6 +60,8 @@ export interface Ruta {
 	peajes: string[];
 	kilometros: number;
 	horas: number;
+	origen: string;
+	destino: string;
 }
 
 export interface Transporte {

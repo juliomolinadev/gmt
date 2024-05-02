@@ -22,6 +22,8 @@ export const startSetRutas = () => {
 				peajes: ruta.data().peajes,
 				kilometros: ruta.data().kilometros,
 				horas: ruta.data().horas,
+				origen: ruta.data().origen,
+				destino: ruta.data().destino,
 			});
 		});
 

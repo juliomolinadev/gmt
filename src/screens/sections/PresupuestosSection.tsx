@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useTypedDispatch } from "../../hooks";
+import { useTypedDispatch, useTypedSelector } from "../../hooks";
 import { PresupuestoForm } from "../../site/components";
 import { PresupuestosTable } from "../../site/components/PresupuestosTable";
 import { TableAndDetailTemplate } from "../../templates/TableAndDetailTemplate";
@@ -13,6 +13,7 @@ import { startSetTransportes } from "../../store/transportes";
 import { startSetPresupuestos } from "../../store/presupuestos/thunks/startSetPresupuestos";
 
 export const PresupuestosSection = () => {
+	const { activePresupuesto } = useTypedSelector((state) => state.presupuestos);
 	const dispatch = useTypedDispatch();
 
 	useEffect(() => {
@@ -24,13 +25,12 @@ export const PresupuestosSection = () => {
 		dispatch(startSetRutas());
 		dispatch(startSetTransportes());
 	}, [dispatch]);
-	console.log("componente");
 
 	return (
 		<TableAndDetailTemplate
 			Table={() => <PresupuestosTable />}
 			Detail={() => <PresupuestoForm />}
-			isOpenDetail={true}
+			isOpenDetail={!!activePresupuesto}
 		/>
 	);
 };
